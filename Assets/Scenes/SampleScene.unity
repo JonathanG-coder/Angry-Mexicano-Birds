@@ -935,7 +935,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.9
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1132,7 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203351404}
-  - component: {fileID: 1203351403}
+  - component: {fileID: 1203351405}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -1140,8 +1140,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!68 &1203351403
-EdgeCollider2D:
+--- !u!4 &1203351404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203351402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1440501985}
+  - {fileID: 1603565192}
+  - {fileID: 2094659750}
+  - {fileID: 234858601}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1203351405
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1172,34 +1191,19 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -9.036378, y: -2.639959}
-  - {x: 11.799296, y: -2.6547568}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!4 &1203351404
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203351402}
+  m_Offset: {x: -0.020463943, y: -4.328125}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1440501985}
-  - {fileID: 1603565192}
-  - {fileID: 2094659750}
-  - {fileID: 234858601}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Size: {x: 20.809101, y: 1.5115986}
+  m_EdgeRadius: 0
 --- !u!1 &1204044767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1215,7 @@ GameObject:
   - component: {fileID: 1204044769}
   - component: {fileID: 1204044768}
   - component: {fileID: 1204044770}
+  - component: {fileID: 1204044771}
   m_Layer: 0
   m_Name: tacosito
   m_TagString: Untagged
@@ -1320,7 +1325,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.30280507, y: -4.469844}
+  - {x: 0.31642914, y: -4.4244347}
   - {x: -1.4468027, y: -4.8665133}
   - {x: -2.7146285, y: -4.772833}
   - {x: -4.168258, y: -2.5548697}
@@ -1361,6 +1366,33 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!50 &1204044771
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204044767}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1415882356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,6 +1888,7 @@ GameObject:
   - component: {fileID: 1727370513}
   - component: {fileID: 1727370512}
   - component: {fileID: 1727370514}
+  - component: {fileID: 1727370515}
   m_Layer: 0
   m_Name: badMan
   m_TagString: Untagged
@@ -1965,9 +1998,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.042758018, y: -4.5868316}
-  - {x: -1.8091254, y: -4.719462}
-  - {x: -2.1093802, y: -4.6366005}
+  - {x: 0.038371805, y: -4.5437193}
+  - {x: -0.1548142, y: -4.54052}
+  - {x: -0.21127652, y: -4.5956283}
+  - {x: -1.8796717, y: -4.660055}
+  - {x: -2.027696, y: -4.5326385}
   - {x: -1.8561225, y: -4.0337167}
   - {x: -0.84892803, y: -3.6360824}
   - {x: -1.373271, y: -2.685263}
@@ -2008,11 +2043,39 @@ EdgeCollider2D:
   - {x: 1.7272435, y: -3.9922428}
   - {x: 1.9735645, y: -4.3669443}
   - {x: 1.9115051, y: -4.7669697}
-  - {x: 0.0806551, y: -4.6074004}
+  - {x: 0.06458021, y: -4.5713}
+  - {x: 0.036120314, y: -4.5424094}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!50 &1727370515
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727370511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2018647469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2219,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.9
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
