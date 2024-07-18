@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class TouchInput : MonoBehaviour
 {
-    private Camera Camera;
+    [SerializeField]private GameObject ball;
+    private Camera cam;
+    private Rigidbody2D ballRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        Camera = Camera.main; // OT cette phrase ? 
+        cam = Camera.main; // OT cette phrase ?
+
+        ballRigidBody = ball.GetComponent<Rigidbody2D>(); 
         //Touchscreen.current.primaryTouch.press.IsPressed();
         //Touchscreen.current.primaryTouch.position.ReadValue();
     }
@@ -18,8 +22,28 @@ public class TouchInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Touchscreen.current.primaryTouch.position.ReadValue());
-        Vector2 worldPosition = Camera.ScreenToWorldPoint(Touchscreen.current.primaryTouch.position.ReadValue());
+        ballRigidBody = ball.GetComponent<Rigidbody2D>();
+
+
+
+        if (!Touchscreen.current.primaryTouch.press.IsPressed())
+        {
+
+            Vector2 worldPosition = cam.ScreenToWorldPoint
+            (Touchscreen.current.primaryTouch.position.ReadValue());
+
+
+            ballRigidBody.isKinematic = true;
+            ballRigidBody.position = worldPosition;
+            
+        }
+
+        if(ballRigidBody != null)
+        {
+            ballRigidBody.isKinematic = false;
+        }
+        
+        
 
 
         // // Out the method if not touching the screen
