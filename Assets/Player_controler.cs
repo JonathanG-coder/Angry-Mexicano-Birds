@@ -7,6 +7,9 @@ public class Player_controler : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]private GameObject ball;
+    [SerializeField] float detachDelayTime = 0.25F ;
+
+
     private Camera cam;
     private Rigidbody2D ballRigidBody;
     private SpringJoint2D ballSpringJoint;
@@ -31,7 +34,7 @@ public class Player_controler : MonoBehaviour
             ballRigidBody.isKinematic = false;
             if(isDragging) 
             {
-                Invoke(nameof(DetachBall),0.5F);
+                Invoke(nameof(DetachBall), detachDelayTime);
                 isDragging = false;
             }
 
@@ -41,30 +44,9 @@ public class Player_controler : MonoBehaviour
         isDragging = true;
         ballRigidBody.isKinematic = true;
         Vector2 worldPosition = cam.ScreenToWorldPoint
-        (Touchscreen.current.primaryTouch.position.ReadValue());
+            (Touchscreen.current.primaryTouch.position.ReadValue());
         ballRigidBody.position = worldPosition;
 
-
-        //  ballRigidBody = ball.GetComponent<Rigidbody2D>();
-
-
-
-        // if (!Touchscreen.current.primaryTouch.press.IsPressed())
-        // {
-
-        //     Vector2 worldPosition = cam.ScreenToWorldPoint
-        //     (Touchscreen.current.primaryTouch.position.ReadValue());
-
-
-        //     ballRigidBody.isKinematic = true;
-        //     ballRigidBody.position = worldPosition;
-            
-        // }
-
-        // if(ballRigidBody != null)
-        // {
-        //     ballRigidBody.isKinematic = false;
-        // }
     }
 
     private void DetachBall()
